@@ -36,9 +36,9 @@
         <button type="submit" id="submitButton" class="btn btn-primary">Go</button>
       </form>
       <ul id="topMenu" class="nav pull-right">
-     <li class=""><a href="special_offer.html">Specials Offer</a></li>
-     <li class=""><a href="normal.html">Delivery</a></li>
-     <li class=""><a href="contact.html">Contact</a></li>
+     <li class=""><a href="{{route('specialOffer')}}">Specials Offer</a></li>
+     <li class=""><a href="{{route('delivery')}}">Delivery</a></li>
+     <li class=""><a href="{{route('contact')}}">Contact</a></li>
      <li class="">
      <a href="#login" role="button" data-toggle="modal" style="padding-right:0"><span class="btn btn-large btn-success">Login</span></a>
     <div id="login" class="modal hide fade in" tabindex="-1" role="dialog" aria-labelledby="login" aria-hidden="false" >
