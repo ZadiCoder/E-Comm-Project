@@ -22,4 +22,12 @@ class BaseController extends Controller
     {
         return view('front.contact');
     }
+    function cart()
+    {
+        return view('front.cart');
+    }
+    function productView()
+    {
+        return view('front.productView');
+    }
 }

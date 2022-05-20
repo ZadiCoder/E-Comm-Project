@@ -78,7 +78,7 @@
 	  <li class="span3">
 		<div class="thumbnail">
 		<i class="tag"></i>
-		<a href="product_details.html"><img src="themes/images/products/b1.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/b1.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
 		  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
@@ -88,30 +88,30 @@
 	  <li class="span3">
 		<div class="thumbnail">
 		<i class="tag"></i>
-		<a href="product_details.html"><img src="themes/images/products/b2.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/b2.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		  <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
 	  <li class="span3">
 		<div class="thumbnail">
 		<i class="tag"></i>
-		<a href="product_details.html"><img src="themes/images/products/b3.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/b3.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		   <h4><a class="btn" href="{{route('productView')}}l">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
 	  <li class="span3">
 		<div class="thumbnail">
 		<i class="tag"></i>
-		<a href="product_details.html"><img src="themes/images/products/b4.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/b4.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		   <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
@@ -122,38 +122,38 @@
 	  <li class="span3">
 		<div class="thumbnail">
 		<i class="tag"></i>
-		<a href="product_details.html"><img src="themes/images/products/5.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/5.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		  <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
 	  <li class="span3">
 		<div class="thumbnail">
 		<i class="tag"></i>
-		<a href="product_details.html"><img src="themes/images/products/6.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/6.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		  <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
 	  <li class="span3">
 		<div class="thumbnail">
-		<a href="product_details.html"><img src="themes/images/products/7.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/7.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		   <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
 	  <li class="span3">
 		<div class="thumbnail">
-		<a href="product_details.html"><img src="themes/images/products/8.jpg" alt=""></a>
+		<a href="{{route('productView')}}"><img src="themes/images/products/8.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		   <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
@@ -166,7 +166,7 @@
 		<a href="product_details.html"><img src="themes/images/products/9.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		  <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
@@ -175,7 +175,7 @@
 		<a href="product_details.html"><img src="themes/images/products/10.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		  <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		  <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
@@ -184,7 +184,7 @@
 		<a href="product_details.html"><img src="themes/images/products/11.jpg" alt=""></a>
 		<div class="caption">
 		  <h5>Product name</h5>
-		   <h4><a class="btn" href="product_details.html">VIEW</a> <span class="pull-right">$222.00</span></h4>
+		   <h4><a class="btn" href="{{route('productView')}}">VIEW</a> <span class="pull-right">$222.00</span></h4>
 		</div>
 		</div>
 	  </li>
