@@ -12,4 +12,5 @@ Route::get('/contact-us',[BaseController::class,'contact'])->name('contact');
 Route::get('/cart',[BaseController::class,'cart'])->name('cart');
 Route::get('/productView',[BaseController::class,'productView'])->name('productView');
 Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
-
+Route::post('/admin/login',[AdminController::class,'makeLogin'])->name('admin.makeLogin');
+Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');

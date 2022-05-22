@@ -30,17 +30,25 @@
       <div class="login_wrapper">
         <div class="animate form login_form">
           <section class="login_content">
-            <form>
+            @if ($errors->any())
+            <div class="alert alert-danger">
+              @foreach ($errors->all() as $errors)
+                  <li>{{$errors}}</li>
+              @endforeach
+            </div>
+                
+            @endif
+            <form action="{{route('admin.makeLogin')}}" method="POST">
+                @csrf
               <h1>Login Form</h1>
               <div>
-                <input type="text" class="form-control" placeholder="Username" required="" />
+                <input type="email" class="form-control" name="email" placeholder="User name" required="" />
               </div>
               <div>
-                <input type="password" class="form-control" placeholder="Password" required="" />
+                <input type="password" class="form-control" name="password" placeholder="Password" required="" />
               </div>
               <div>
-                <a class="btn btn-default submit" href="index.html">Log in</a>
-
+                <input type="submit" value="Login" name="">
                 <div class="clearfix"></div>
                 <br />
 

@@ -22,7 +22,7 @@
     <span class="icon-bar"></span>
   </a>
     <div class="navbar-inner">
-      <a class="brand" href="index.html"><img src="themes/images/logo.png" alt="Bootsshop"/></a>
+      <a class="brand bg-light" href="{{asset('/')}}">PakBuy.com</a>
       <form class="form-inline navbar-search" method="post" action="products.html" >
       <input id="srchFld" class="srchTxt" type="text" />
         <select class="srchTxt">
