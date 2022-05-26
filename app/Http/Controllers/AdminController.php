@@ -33,4 +33,9 @@ class AdminController extends Controller
     {
         return view('admin.dashboard');
     }
+    function logout()
+    {
+        Auth::logout();
+        return redirect()->route('admin.login');
+    }
 }
