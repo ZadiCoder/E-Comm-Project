@@ -60,6 +60,6 @@
     <script src="{{asset('admin_theme/vendors/nprogress/nprogress.js')}}"></script>
     <!-- Custom Theme Scripts -->
     <script src="{{asset('admin_theme/build/js/custom.min.js')}}"></script>
-	
+	@stack('footer-script')
   </body>
 </html>

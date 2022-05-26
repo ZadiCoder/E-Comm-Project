@@ -25,7 +25,15 @@
         <div class="menu_section">
           <h3>General</h3>
           <ul class="nav side-menu">
-            <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-home"></i> Dashboard <span class="fa fa-chevron-down"></span></a>
+            <li><a href="{{route('admin.dashboard')}}"><i class="fa fa-home">
+              </i> Dashboard <span class="fa fa-chevron-down"></span></a>
+            </li>
+            <li class=""><a><i class="fa fa-home"></i> Category Manager <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none;">
+                <li><a href="{{route('category.list')}}">List</a></li>
+                <li><a href="{{route('category.create')}}">Create</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
