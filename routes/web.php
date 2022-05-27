@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BaseController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\ProductController;
 
 Route::get('/',[BaseController::class,'show'])->name('home');
 Route::get('/specialoffer',[BaseController::class,'specialOffer'])->name('specialOffer');
@@ -26,4 +27,8 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/categories/edit/{id}',[CategoryController::class,'edit'])->name('category.edit');
     Route::post('/categories/edit/{id}',[CategoryController::class,'update'])->name('category.update');
     Route::get('/categories/delete',[CategoryController::class,'destroy'])->name('category.delete');
+
+    /*ProductController Routes */
+    Route::get('/products',[ProductController::class,'index'])->name('product.list');
+    Route::get('/products/create',[ProductController::class,'create'])->name('product.create');
 });
