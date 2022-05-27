@@ -30,7 +30,8 @@
             
             <td>
                 <a href="{{route('product.edit' , $data->id)}}" style="font-size: 17px; padding:5px;" ><i  class="fa fa-edit"></i></a>
-
+                <a href="javaseript::void(0)" style="font-size: 17px; padding:5px;" data-id="{{$data->id}}"
+                class="delete"><i class="fa fa-trash" ></i></a>
             </td>
         </tr>
         @endforeach
@@ -38,3 +39,24 @@
 </table>
 
 @endsection
+
+@push('footer-script')
+    <script>
+        $('.delete').on('click',function(){
+            if(confirm('Are You Delete This Product.')){
+                var id = $(this).data('id');
+                $.ajax({
+                    url:'{{route("product.delete")}}',
+                    mathod:'post',
+                    data:{
+                        _token: "{{ csrf_token() }}",
+                        'id':id
+                    },
+                    success: function(data){
+                        location.reload();
+                    }   
+                });  
+            }
+        });
+    </script>
+@endpush
