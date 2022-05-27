@@ -16,7 +16,8 @@ class ProductController extends Controller
      */
     public function index()
     {
-        //
+        $products = Product::get();
+        return view('admin.product.index',['products'=>$products]);
     }
 
     /**
@@ -70,9 +71,12 @@ class ProductController extends Controller
      * @param  \App\Models\Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Request $request , Product $product)
     {
-        //
+        $id = $request->id;
+        $product = Product::findOrFail($id);
+        $categories = Category::whereNotNull('category_id')->get();
+        return view('admin.product.edit',['product'=>$product , 'categories'=>$categories]);
     }
 
     /**
@@ -84,7 +88,20 @@ class ProductController extends Controller
      */
     public function update(Request $request, Product $product)
     {
-        //
+        $id = $request->id;
+        $data = array(
+            'name'=>$request->name,
+            'category_id'=>$request->category_id,
+            'price'=>$request->price,
+        );
+        if($request->hasFile('image')){
+            $image = $request->file('image');
+            $fileName = date('dmY').time().'.'.$image->getClientOriginalExtension();
+            $image->move(public_path("/uploads"), $fileName);
+            $data['image'] = $fileName;
+        }
+        $create = Product::where('id',$id)->update($data);
+        return redirect()->route('product.list');
     }
 
     /**
