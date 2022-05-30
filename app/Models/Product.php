@@ -12,4 +12,7 @@ class Product extends Model
     public function category(){
         return $this->belongsto(Category::class);
     }
+    public function ProductDetail(){
+        return $this->hasOne(ProductDetail::class);
+    }
 }

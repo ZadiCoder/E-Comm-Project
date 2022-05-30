@@ -11,7 +11,7 @@ Route::get('/specialoffer',[BaseController::class,'specialOffer'])->name('specia
 Route::get('/delivery',[BaseController::class,'delivery'])->name('delivery');
 Route::get('/contact-us',[BaseController::class,'contact'])->name('contact');
 Route::get('/cart',[BaseController::class,'cart'])->name('cart');
-Route::get('/productView',[BaseController::class,'productView'])->name('productView');
+Route::get('/productView/{id}',[BaseController::class,'productView'])->name('productView');
 Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
 Route::post('/admin/login',[AdminController::class,'makeLogin'])->name('admin.makeLogin');
 
@@ -35,4 +35,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/product/edit/{id}',[ProductController::class,'edit'])->name('product.edit');
     Route::post('/product/edit/{id}',[ProductController::class,'update'])->name('product.update');
     Route::get('/product/delete',[ProductController::class,'destroy'])->name('product.delete');
+
+    Route::get('/product/details/{id}',[ProductController::class,'extraDetails'])->name('product.extraDetails');
+    Route::post('/product/details/{id}',[ProductController::class,'extraDetailsStore'])->name('product.extraDetailsStore');
 });

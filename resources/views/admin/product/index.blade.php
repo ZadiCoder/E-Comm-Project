@@ -10,6 +10,7 @@
             <th>Category Name</th>
             <th>Price</th>
             <th>Image</th>
+            <th>Extra Details</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -27,12 +28,12 @@
             </td>
             <td>{{$data->price}}</td>
             <td><img src="{{asset('uploads/'.$data->image)}}" style="height:80px; width:80px;"></td>
-            
+            <td><button><a href="{{route('product.extraDetails' , $data->id)}}">Add</a></button></td>
             <td>
                 <a href="{{route('product.edit' , $data->id)}}" style="font-size: 17px; padding:5px;" ><i  class="fa fa-edit"></i></a>
                 <a href="javaseript::void(0)" style="font-size: 17px; padding:5px;" data-id="{{$data->id}}"
                 class="delete"><i class="fa fa-trash" ></i></a>
-            </td>
+            </td> 
         </tr>
         @endforeach
     </tbody>
