@@ -4,7 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Product;
-
+use App\Models\User;
+use Hash;
 class BaseController extends Controller
 {
     function show()
@@ -36,5 +37,18 @@ class BaseController extends Controller
         $category_id = $product->category_id;
         $related_products = Product::where('category_id',$category_id)->get();
         return view('front.productView',compact('product','related_products'));
+    }
+    function user_login(){
+        return view('front.login');
+    }
+    function user_store(Request $request){
+        $data = array(
+            'name'=> $request->first_name.' '.$request->last_name,
+            'email'=> $request->email,
+            'password' => Hash::make($request->password),
+            'role'=> 'user'
+        );
+        $user = User::create($data);
+        return redirect()->route('user_login');
     }
 }

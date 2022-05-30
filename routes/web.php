@@ -14,6 +14,8 @@ Route::get('/cart',[BaseController::class,'cart'])->name('cart');
 Route::get('/productView/{id}',[BaseController::class,'productView'])->name('productView');
 Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
 Route::post('/admin/login',[AdminController::class,'makeLogin'])->name('admin.makeLogin');
+Route::get('/user/login',[BaseController::class,'user_login'])->name('user_login');
+Route::post('/user/login',[BaseController::class,'user_store'])->name('user_store');
 
 
 Route::group(['middleware' => 'auth'], function(){
