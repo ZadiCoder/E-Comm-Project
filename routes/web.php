@@ -5,6 +5,7 @@ use App\Http\Controllers\BaseController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\UserController;
 
 Route::get('/',[BaseController::class,'show'])->name('home');
 Route::get('/specialoffer',[BaseController::class,'specialOffer'])->name('specialOffer');
@@ -42,4 +43,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     Route::get('/product/details/{id}',[ProductController::class,'extraDetails'])->name('product.extraDetails');
     Route::post('/product/details/{id}',[ProductController::class,'extraDetailsStore'])->name('product.extraDetailsStore');
+
+    Route::get('/admin/users',[UserController::class,'index'])->name('admin.users');
+    Route::get('/admin/delete',[UserController::class,'delete'])->name('user.delete');
 });
