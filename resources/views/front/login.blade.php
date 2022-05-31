@@ -8,17 +8,26 @@
     </ul>
 	<h3>Login</h3>	
     <div class="well">
-        <form class="form-horizontal" >
+        @if ($errors->any())
+        <div class="alert alert-danger">
+          @foreach ($errors->all() as $errors)
+              <li>{{$errors}}</li>
+          @endforeach
+        </div>
+            
+        @endif
+        <form class="form-horizontal" action="{{route('loginCheck')}}" method="post" >
+            @csrf
             <div class="control-group">
                 <label class="control-label" for="input_email">Email <sup>*</sup></label>
                 <div class="controls">
-                    <input type="email" id="input_email" placeholder="Enter Email">
+                    <input type="email" id="input_email" name="email" placeholder="Enter Email">
                 </div>
             </div>
             <div class="control-group">
                 <label class="control-label" for="input_email">Password <sup>*</sup></label>
                 <div class="controls">
-                    <input type="password" id="input_password" placeholder="*********">
+                    <input type="password" id="input_password" name="password" placeholder="*********">
                 </div>
             </div>
             <div class="control-group">

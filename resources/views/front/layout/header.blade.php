@@ -40,8 +40,13 @@
      <li class=""><a href="{{route('delivery')}}">Delivery</a></li>
      <li class=""><a href="{{route('contact')}}">Contact</a></li>
      <li class="">
-     <a href="{{route('user_login')}}" >
-      <span class="btn btn-large btn-success">Login</span></a>
+       @if (Auth::user())
+       <a href="{{route('user_logout')}}" >
+        <span class="btn btn-large btn-success">Logout</span></a>
+       @else
+       <a href="{{route('user_login')}}" >
+        <span class="btn btn-large btn-success">Login</span></a>   
+       @endif
     </li>
       </ul>
     </div>

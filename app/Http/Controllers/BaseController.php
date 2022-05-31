@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\Product;
 use App\Models\User;
 use Hash;
+use Illuminate\Support\Facades\Auth;
 class BaseController extends Controller
 {
     function show()
@@ -41,6 +42,18 @@ class BaseController extends Controller
     function user_login(){
         return view('front.login');
     }
+    function loginCheck(Request $request){
+        $data = array(
+            'email'=> $request->email,
+            'password' => $request->password,
+        );
+        if(Auth::attempt($data)){
+            return redirect()->route('home');
+        }
+        else{
+            return back()->withErrors(['message'=>'invalid email or passworde']);
+        }
+    }
     function user_store(Request $request){
         $data = array(
             'name'=> $request->first_name.' '.$request->last_name,
@@ -49,6 +62,10 @@ class BaseController extends Controller
             'role'=> 'user'
         );
         $user = User::create($data);
+        return redirect()->route('user_login');
+    }
+    function logout(){
+        Auth::logout();
         return redirect()->route('user_login');
     }
 }

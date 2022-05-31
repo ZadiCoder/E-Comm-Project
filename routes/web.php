@@ -15,7 +15,9 @@ Route::get('/productView/{id}',[BaseController::class,'productView'])->name('pro
 Route::get('/admin/login',[AdminController::class,'login'])->name('admin.login');
 Route::post('/admin/login',[AdminController::class,'makeLogin'])->name('admin.makeLogin');
 Route::get('/user/login',[BaseController::class,'user_login'])->name('user_login');
-Route::post('/user/login',[BaseController::class,'user_store'])->name('user_store');
+Route::post('/user/login',[BaseController::class,'loginCheck'])->name('loginCheck');
+Route::post('/user/register',[BaseController::class,'user_store'])->name('user_store');
+Route::get('/user/logout',[BaseController::class,'logout'])->name('user_logout');
 
 
 Route::group(['middleware' => 'auth'], function(){
