@@ -6,6 +6,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\CartController;
 
 Route::get('/',[BaseController::class,'show'])->name('home');
 Route::get('/specialoffer',[BaseController::class,'specialOffer'])->name('specialOffer');
@@ -24,6 +25,9 @@ Route::get('/user/logout',[BaseController::class,'logout'])->name('user_logout')
 Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
     Route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logout');
+
+    Route::post('/cart/store',[CartController::class,'store'])->name('cart.store');
+
 
     /* CategoryController <Routes></Routes>*/
     Route::get('/categories',[CategoryController::class,'index'])->name('category.list');
