@@ -27,7 +27,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logout');
 
     Route::post('/cart/store',[CartController::class,'store'])->name('cart.store');
-
+    Route::get('/cart/delete',[CartController::class,'destroy'])->name('cart.delete');
 
     /* CategoryController <Routes></Routes>*/
     Route::get('/categories',[CategoryController::class,'index'])->name('category.list');
