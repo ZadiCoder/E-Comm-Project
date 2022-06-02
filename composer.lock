@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "1abc7822bd9f28e9a62986817bf04f76",
+    "content-hash": "c3b0e883765d23cde9e25c8b2a6d0b94",
     "packages": [
         {
             "name": "brick/math",
@@ -436,6 +436,62 @@
                 }
             ],
             "time": "2021-10-11T09:18:27+00:00"
+        },
+        {
+            "name": "eway/eway-rapid-php",
+            "version": "1.4.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/eWAYPayment/eway-rapid-php.git",
+                "reference": "5581c8279774aabe58ea3aca9bfd7f62759ce7cd"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/eWAYPayment/eway-rapid-php/zipball/5581c8279774aabe58ea3aca9bfd7f62759ce7cd",
+                "reference": "5581c8279774aabe58ea3aca9bfd7f62759ce7cd",
+                "shasum": ""
+            },
+            "require": {
+                "ext-curl": "*",
+                "ext-json": "*",
+                "php": ">=5.4.0"
+            },
+            "require-dev": {
+                "internations/http-mock": "~0.7",
+                "jeremeamia/superclosure": "1.0.2",
+                "phpdocumentor/phpdocumentor": "~2.8",
+                "phpunit/phpunit": "4.8.*",
+                "squizlabs/php_codesniffer": "2.*"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Eway\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "eWAY",
+                    "homepage": "https://www.eway.com.au"
+                }
+            ],
+            "description": "eWAY Rapid PHP library",
+            "homepage": "https://www.eway.com.au",
+            "keywords": [
+                "eway",
+                "payment processing",
+                "payments",
+                "rapid"
+            ],
+            "support": {
+                "issues": "https://github.com/eWAYPayment/eway-rapid-php/issues",
+                "source": "https://github.com/eWAYPayment/eway-rapid-php/tree/v1.4.0"
+            },
+            "time": "2021-12-08T00:21:16+00:00"
         },
         {
             "name": "fruitcake/php-cors",

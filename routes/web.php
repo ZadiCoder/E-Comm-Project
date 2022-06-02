@@ -7,6 +7,7 @@ use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\ProductBookingController;
 
 Route::get('/',[BaseController::class,'show'])->name('home');
 Route::get('/specialoffer',[BaseController::class,'specialOffer'])->name('specialOffer');
@@ -26,9 +27,16 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/admin/dashboard',[AdminController::class,'dashboard'])->name('admin.dashboard');
     Route::get('/admin/logout',[AdminController::class,'logout'])->name('admin.logout');
 
+    /*CartController Routes */
     Route::post('/cart/store',[CartController::class,'store'])->name('cart.store');
     Route::get('/cart/delete',[CartController::class,'destroy'])->name('cart.delete');
 
+    /*BookingController Routes */
+    Route::post('/product/booking',[ProductBookingController::class,'store'])->name('product.booking');
+    
+      /*Eway Routes */
+      Route::get('/product/bookingSuccess',[ProductBookingController::class,'bookingSuccess'])->name('product.bookingSuccess');
+      Route::get('/product/bookingFail',[ProductBookingController::class,'bookingFail'])->name('product.bookingFail');
     /* CategoryController <Routes></Routes>*/
     Route::get('/categories',[CategoryController::class,'index'])->name('category.list');
     Route::get('/category/add',[CategoryController::class,'create'])->name('category.create');
