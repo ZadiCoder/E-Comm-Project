@@ -16,7 +16,8 @@ class ProductBookingController extends Controller
      */
     public function index()
     {
-        //
+        $booking_products =ProductBooking::get();
+        return view('admin.bookingProducts.index',compact('booking_products'));
     }
 
     /**
@@ -103,9 +104,11 @@ class ProductBookingController extends Controller
      * @param  \App\Models\ProductBooking  $productBooking
      * @return \Illuminate\Http\Response
      */
-    public function destroy(ProductBooking $productBooking)
+    public function destroy(ProductBooking $productBooking , Request $request)
     {
-        //
+        $id = $request->id;
+        $booking = ProductBooking::find($id);
+        $booking->delete();
     }
     public function ewayPayment($ammount){
         $total_ammount = $ammount;

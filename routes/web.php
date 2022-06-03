@@ -33,6 +33,7 @@ Route::group(['middleware' => 'auth'], function(){
 
     /*BookingController Routes */
     Route::post('/product/booking',[ProductBookingController::class,'store'])->name('product.booking');
+   
     
       /*Eway Routes */
       Route::get('/product/bookingSuccess',[ProductBookingController::class,'bookingSuccess'])->name('product.bookingSuccess');
@@ -56,6 +57,10 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/product/details/{id}',[ProductController::class,'extraDetails'])->name('product.extraDetails');
     Route::post('/product/details/{id}',[ProductController::class,'extraDetailsStore'])->name('product.extraDetailsStore');
 
+        //Booking Route
+    Route::get('booking/products',[ProductBookingController::class,'index'])->name('booking.products');
+    Route::get('booking/products/delete',[ProductBookingController::class,'destroy'])->name('booking.product.delete');
+    
     Route::get('/admin/users',[UserController::class,'index'])->name('admin.users');
     Route::get('/admin/delete',[UserController::class,'delete'])->name('user.delete');
 });

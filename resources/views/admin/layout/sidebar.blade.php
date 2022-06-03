@@ -45,6 +45,11 @@
                 <li><a href="{{route('admin.users')}}">List</a></li>
               </ul>
             </li>
+            <li class=""><a><i class="fa fa-home"></i> Booking Product Manager <span class="fa fa-chevron-down"></span></a>
+              <ul class="nav child_menu" style="display: none;">
+                <li><a href="{{route('booking.products')}}">List</a></li>
+              </ul>
+            </li>
           </ul>
         </div>
       </div>
