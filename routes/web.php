@@ -60,6 +60,7 @@ Route::group(['middleware' => 'auth'], function(){
         //Booking Route
     Route::get('booking/products',[ProductBookingController::class,'index'])->name('booking.products');
     Route::get('booking/products/delete',[ProductBookingController::class,'destroy'])->name('booking.product.delete');
+    Route::get('booking/product-status',[ProductBookingController::class,'change_bookingStatus'])->name('booking.product.status');
     
     Route::get('/admin/users',[UserController::class,'index'])->name('admin.users');
     Route::get('/admin/delete',[UserController::class,'delete'])->name('user.delete');

@@ -149,4 +149,11 @@ class ProductBookingController extends Controller
         Session::forget('bookIds');
         return redirect()->route('cart');
     }
+    public function change_bookingStatus(Request $request){
+        $id = $request->id;
+        $booking_status = $request->booking_status;
+        $booking_product = ProductBooking::where('id',$id)->update([
+            'booking_status'=> $booking_status]);
+
+        }
 }

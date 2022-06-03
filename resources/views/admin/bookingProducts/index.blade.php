@@ -11,6 +11,7 @@
             <th>Qty</th>
             <th>Total Amount</th>
             <th>Payment Status</th>
+            <th>Bokking Status</th>
             <th>Action</th>
         </tr>
     </thead>
@@ -23,6 +24,14 @@
             <td>{{$booking_product->qty}}</td>
             <td>{{$booking_product->qty * $booking_product->product->price}}</td>
             <td>{{$booking_product->payment_status}}</td>
+            <td>
+                @php $book_status = $booking_product->booking_status;  @endphp
+                <select name="" class="book_status" data-id="{{$booking_product->id}}">
+                    <option value="0" @if($book_status == '0') selected @endif>In Progress</option>
+                    <option value="1" @if($book_status == '1') selected @endif>Booking Cancel</option>
+                    <option value="2" @if($book_status == '2') selected @endif >Booked</option>
+                </select>
+            </td>
 
             <td>
                 <a href="javaseript::void(0)" style="font-size: 17px; padding:5px;" data-id="{{$booking_product->id}}"
@@ -50,6 +59,18 @@
                     }   
                 });  
             }
+        });
+
+        $('.book_status').on('click',function(){
+            var booking_status = $(this).val();
+            var id = $(this).data('id');
+            $.ajax({
+                url:'{{route("booking.product.status")}}',
+                data:{
+                    'booking_status':booking_status,
+                    'id':id,
+                }   
+            });      
         });
     </script>
 @endpush
